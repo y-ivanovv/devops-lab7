@@ -22,3 +22,4 @@ $task = '{"title":"Check container"}' | curl.exe -fsS http://127.0.0.1:8080/task
 curl.exe -fsS -X PATCH "http://127.0.0.1:8080/tasks/$($task.id)/done"
 curl.exe -fsS "http://127.0.0.1:8080/tasks/$($task.id)"
 ```
+`main` защищена. Изменения проходят через pull request с успешными проверками обеих версий Go.
