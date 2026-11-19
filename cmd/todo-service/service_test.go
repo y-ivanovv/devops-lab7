@@ -9,7 +9,7 @@ import (
 )
 
 func TestTaskLifecycle(t *testing.T) {
-	ctx := context.Background()
+	ctx  := context.Background()
 	s := service{api.NewMemory[Task]()}
 	id, err := s.Create(ctx, Task{Title: "Prepare lab", Priority: 2, Done: true})
 	if err != nil || id == "" {
@@ -29,7 +29,7 @@ func TestTaskLifecycle(t *testing.T) {
 }
 
 func TestInvalidRequests(t *testing.T) {
-	ctx := context.Background()
+	ctx  := context.Background()
 	s := service{api.NewMemory[Task]()}
 	if _, err := s.Create(ctx, Task{Title: "  "}); !errors.Is(err, api.ErrInvalid) {
 		t.Fatalf("blank title: got %v", err)
