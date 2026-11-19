@@ -1,0 +1,10 @@
+*
+!go.mod
+!go.sum
+!cmd/
+!cmd/todo-service/
+!cmd/todo-service/*.go
+!internal/
+!internal/**
+!proto/
+!proto/*.go
